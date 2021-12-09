@@ -55,9 +55,10 @@ def test_example(selenium_facade):
         if name_created_goal != new_goal_name:
             allure.attach(f"entered name:{name_created_goal}, current goal name:{new_goal_name}")
             raise AssertionError("Goal name doesn't mach with entered name")
-
     with allure.step("Check every month invest tab, what them too have new goal in schedule"):
         act.tap_element(page_calculations.every_mounts_investments)
+        act.wait_visible_of_element(page_calculations.goals_row_instance_on_mounts_invest)
+        # print(act.get_elements(page_calculations.name_instance_row_on_mount_invest)[-1].text)
         if name_created_goal != act.get_elements(page_calculations.name_instance_row_on_mount_invest)[-1].text:
             allure.attach(act.get_screen_shot())
             raise AssertionError("I can't find new goal in goals page")
