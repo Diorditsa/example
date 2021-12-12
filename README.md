@@ -19,7 +19,7 @@ python -m venv [directory]
 pytest test/example.py --alluredir=allurerep  
 Артефаткты аллюра соберутся в текущей директории запуска, в папку allurerep
 
-### запуст отчета:  
+### Запуст отчета:  
 если мы находимя в диретории прокта то команда:  
 allure serve allurerep  
 Есои нет, то указываем абсолютный путь к папке:  
